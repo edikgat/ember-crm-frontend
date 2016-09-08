@@ -1,0 +1,28 @@
+outlet
+
+article#support_request
+  h1
+    = model.subject
+    link-to 'edit' 'users-support-request.edit' model classNames='edit'
+
+  p
+    ' Name:
+    model.subject
+
+  p
+    label Status:
+    '
+    model.status
+
+  p
+    label Feedback:
+    br
+    model.notes
+
+  p
+    a.delete href='#' click="delete" delete
+    input type='submit' value='Save Changes' click='saveChanges'
+    if showUnsavedMessage
+      .unsaved unsaved changes
+    if isSaving
+      .saving saving...

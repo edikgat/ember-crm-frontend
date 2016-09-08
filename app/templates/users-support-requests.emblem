@@ -1,0 +1,11 @@
+article#support_requests
+  h1
+    | Requests
+    link-to 'users-support-requests.new' | New report
+  = input value=search placeholder="search" classNames="search"
+  ul
+    each support_request in supportRequests
+      link-to 'users-support-request' support_request tagName="li"
+        support_request.subject
+
+outlet

@@ -1,0 +1,42 @@
+if errorMessage
+  .error {{errorMessage}}
+
+form submit="signUp"
+  fieldset
+    dl
+      dt
+        label for="firstName" First name:
+      dd
+        = input value=user.firstName placeholder="Enter First Name"
+        each error in user.errors.firstName
+          .error {{error.message}}
+    dl
+      dt
+        label for="lastName" Last name:
+      dd
+        = input value=user.lastName placeholder="Enter Last Name"
+        each error in user.errors.lastName
+          .error {{error.message}}
+    dl
+      dt
+        label for="email" Email:
+      dd
+        = input value=user.email placeholder="Enter Email"
+        each error in user.errors.email
+          .error {{error.message}}
+    dl
+      dt
+        label for="password" Password:
+      dd
+        = input value=user.password placeholder="Enter password"
+        each error in user.errors.password
+          .error {{error.message}}
+    dl
+      dt
+        label for="passwordConfirmation" Password Confirmation:
+      dd
+        = input value=user.passwordConfirmation placeholder="Enter password again"
+        each error in user.errors.passwordConfirmation
+          .error {{error.message}}
+  fieldset.actions
+    input type='submit' value='Sign Up'

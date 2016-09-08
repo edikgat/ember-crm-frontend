@@ -1,0 +1,15 @@
+header
+  article
+    span.logo
+      link-to 'dashboard' | Support Requests Demo
+    span.login
+        if session.isAuthenticated
+          if session.isUserSession
+            a click="invalidateSession" Log out User
+          else
+            a click="invalidateSession" Log out Agent
+
+section#main
+  = outlet
+
+footer

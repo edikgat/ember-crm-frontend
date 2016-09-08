@@ -1,0 +1,14 @@
+if errorMessage
+  .error {{errorMessage}}
+form submit="authenticate"
+  fieldset
+    dl
+      dt
+        label for="identification" Email:
+      dd: = input value=identification placeholder="Enter Login"
+    dl
+      dt
+        label for="password" Password:
+      dd: = input value=password placeholder="Enter Password"
+  fieldset.actions
+    button type="submit" Login

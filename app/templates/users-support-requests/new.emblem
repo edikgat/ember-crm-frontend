@@ -1,0 +1,14 @@
+article#support_request
+  h1 New Support Request
+
+  if showError
+      .error Support requests mush have subject
+
+  form
+    fieldset
+      dl
+        dt: label Subject:
+        dd: = input value=fields.subject
+
+    fieldset.actions
+      input type='submit' value='Create Support Request' click="createSupportRequest"

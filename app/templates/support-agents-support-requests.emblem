@@ -1,0 +1,11 @@
+article#support_requests
+  h1
+    | Requests
+    a href="http://localhost:3000/api/support_agents/v1/support_requests/report.pdf" Download Report
+  = input value=search placeholder="search" classNames="search"
+  ul
+    each support_request in supportRequests
+      link-to 'support-agents-support-request' support_request tagName="li"
+        support_request.subject
+
+outlet

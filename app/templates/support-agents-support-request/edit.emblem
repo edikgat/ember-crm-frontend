@@ -1,0 +1,13 @@
+article#support_request
+  h1
+    model.subject
+
+  form
+    fieldset
+      dl
+        dt: label Subject:
+        dd: = input value=model.subject
+
+    fieldset.actions
+      input type='submit' value='Save Changes' click="saveChanges"
+      a.cancel href="#" click="cancel" cancel

@@ -1,0 +1,2 @@
+h1 Sign Up
+= user-signup-form user=model triggerSave=(action "save") errorMessage=errorMessage

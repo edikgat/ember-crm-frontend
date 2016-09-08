@@ -1,0 +1,9 @@
+ul
+  li
+    link-to 'login.user' | Sign in user
+  li
+    link-to 'login.support-agent' | Sign in agent
+  li
+    link-to 'signup' | Register new user
+  li
+    a href="http://localhost:3000/admin/login" Sign in admin
