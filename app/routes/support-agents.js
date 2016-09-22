@@ -3,7 +3,6 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
   beforeModel: function(transition) {
-
     window.modelForAdapter = 'support-agent';
     let superResult = this._super(transition);
 
@@ -13,7 +12,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
       transition.abort();
       this.get('session').set('attemptedTransition', transition);
       if(!isSupportAgent) {
-        return window.location.replace("users/users-support-requests/");
+        return this.transitionTo('users-support-requests');
       }
     }
     return superResult;

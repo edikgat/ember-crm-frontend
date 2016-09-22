@@ -13,6 +13,6 @@ export default DS.Model.extend({
 }).reopenClass({
 
   valid: function(fields) {
-    return fields.firstName && fields.lastName && fields.email;
+    return Boolean(fields.firstName && fields.lastName && fields.email);
   }
 });
