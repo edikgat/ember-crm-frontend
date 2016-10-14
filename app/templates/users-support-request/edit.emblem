@@ -1,13 +1,16 @@
-article#support_request
-  h1
-    model.subject
+.col-sm-8
+  .page-header
+    h1
+      model.subject
 
-  form
-    fieldset
-      dl
-        dt: label Subject:
-        dd: = input value=model.subject
+  form.form-horizontal
+    .form-group.required
+      label.required.col-sm-3.control-label for="subject"
+        abbr title="required" *
+        |  Subject
+      .col-sm-9
+        = input value=model.subject class="required form-control"
 
-    fieldset.actions
-      input type='submit' value='Save Changes' click="saveChanges"
-      a.cancel href="#" click="cancel" cancel
+    .form-actions
+      input.btn.btn-primary type='submit' value='Save Changes' click="createSupportRequest"
+      a.cancel.btn.btn-default href="#" click="cancel" Cancel

@@ -1,11 +1,11 @@
-article#support_requests
-  h1
+.col-sm-3
+  h2
     | Requests
-    a href="http://localhost:3000/api/support_agents/v1/support_requests/report.pdf" Download Report
-  = input value=search placeholder="search" classNames="search"
-  ul
+  .form-search.form-flex
+    .form-group
+      = input value=search placeholder="search" classNames="search form-control search-input" type="search"
+  .list-group
     each support_request in supportRequests
-      link-to 'support-agents-support-request' support_request tagName="li"
+      link-to 'support-agents-support-request' support_request tagName="button" class="list-group-item"
         support_request.subject
-
 outlet

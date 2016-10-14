@@ -1,13 +1,12 @@
 outlet
 
-article#support_request
-  h1
-    = model.subject
-    link-to 'edit' 'users-support-request.edit' model classNames='edit'
-
-  p
-    ' Name:
-    model.subject
+.col-sm-8
+  .page-header
+    link-to 'users-support-request.edit' model classNames='edit btn btn-primary'
+      span.glyphicon.glyphicon-pencil
+      |  Edit
+    h1
+      = model.subject
 
   p
     label Status:
@@ -20,8 +19,7 @@ article#support_request
     model.notes
 
   p
-    a.delete href='#' click="delete" delete
-    input type='submit' value='Save Changes' click='saveChanges'
+    a.btn.btn-danger.delete href='#' click="delete" Delete
     if showUnsavedMessage
       .unsaved unsaved changes
     if isSaving
