@@ -1,15 +1,17 @@
-header
-  article
-    span.logo
-      link-to 'dashboard' | Support Requests Demo
-    span.login
-        if session.isAuthenticated
-          if session.isUserSession
-            a click="invalidateSession" Log out User
-          else
-            a click="invalidateSession" Log out Agent
+nav.navbar.navbar-inverse.navbar-fixed-top
+  .container
+    .navbar-header
+      link-to 'dashboard' class= "navbar-brand"| Support Requests Demo
+    #navbar.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li
+          if session.isAuthenticated
+            if session.isUserSession
+              a click="invalidateSession" Log out User
+            else
+              a click="invalidateSession" Log out Agent
+.container#main-container
 
-section#main
   = outlet
 
 footer
