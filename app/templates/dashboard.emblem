@@ -1,4 +1,4 @@
-ul
+ul.nav.nav-pills.nav-stacked
   li
     link-to 'login.user' | Sign in user
   li

@@ -52,6 +52,6 @@ form.form-horizontal submit="signUp" role="form"
       = input value=user.passwordConfirmation placeholder="Enter password again" class="required form-control"
       each error in user.errors.passwordConfirmation
         span.help-block {{error.message}}
-
-  fieldset.actions
-    input type='submit' value='Sign Up'
+  .form-group
+    .col-sm-offset-1.col-sm-10
+      input type='submit' value='Sign Up' class='btn btn-primary btn-default'

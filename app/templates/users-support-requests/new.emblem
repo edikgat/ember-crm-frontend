@@ -2,13 +2,20 @@ article#support_request
   h1 New Support Request
 
   if showError
-      .error Support requests mush have subject
+    .alert.alert-danger.alert-dismissable role="alert"
+      button.close type="button" data-dismiss="alert"
+        span aria-hidden="true" &times;
+        %span.sr-only Close
+      %h4 Support requests must have subject
 
-  form
-    fieldset
-      dl
-        dt: label Subject:
-        dd: = input value=fields.subject
+  form.form-horizontal
+    .form-group.required
+      label.required.col-sm-3.control-label for="subject"
+        abbr title="required" *
+        |  Subject
+      .col-sm-9
+        = input value=fields.subject class="required form-control"
 
-    fieldset.actions
-      input type='submit' value='Create Support Request' click="createSupportRequest"
+    .form-group
+      .col-sm-offset-2
+        input.btn.btn-primary type='submit' value='Create Support Request' click="createSupportRequest"

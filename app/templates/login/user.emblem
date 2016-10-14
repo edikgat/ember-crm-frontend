@@ -1,14 +1,24 @@
 if errorMessage
-  .error {{errorMessage}}
-form submit="authenticate"
-  fieldset
-    dl
-      dt
-        label for="identification" Email:
-      dd: = input value=identification placeholder="Enter Login"
-    dl
-      dt
-        label for="password" Password:
-      dd: = input value=password placeholder="Enter Password"
-  fieldset.actions
-    button type="submit" Login
+  .alert.alert-danger.alert-dismissable role="alert"
+    button.close type="button" data-dismiss="alert"
+      span aria-hidden="true" &times;
+      %span.sr-only Close
+    %h4 {{errorMessage}}
+
+form.form-horizontal submit="authenticate" role="form"
+  .form-group.required
+    label.required.col-sm-3.control-label for="identification"
+      abbr title="required" *
+      |  Email
+    .col-sm-9
+      = input value=identification placeholder="Enter Email" class="required form-control"
+
+  .form-group.required
+    label.required.col-sm-3.control-label for="password"
+      abbr title="required" *
+      |  Password
+    .col-sm-9
+      = input value=password placeholder="Enter Password" class="required form-control"
+  .form-actions
+    .col-sm-offset-2.col-sm-10
+      input type='submit' value='Login' class='btn btn-default btn-primary'
