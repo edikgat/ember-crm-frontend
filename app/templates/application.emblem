@@ -4,6 +4,10 @@ nav.navbar.navbar-inverse.navbar-fixed-top
       link-to 'dashboard' class= "navbar-brand"| Support Requests Demo
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav
+        if session.isAuthenticated
+          unless session.isUserSession
+            li
+              a href="http://localhost:3000/api/support_agents/v1/support_requests/report.pdf" Download Report
         li
           if session.isAuthenticated
             if session.isUserSession
