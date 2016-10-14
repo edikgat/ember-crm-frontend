@@ -1,27 +1,31 @@
 outlet
 
-article#support_request
-  h1
-    = model.subject
-    link-to 'edit' 'support-agents-support-request.edit' model classNames='edit'
+.col-sm-8
+  .page-header
+    link-to 'support-agents-support-request.edit' model classNames='edit btn btn-primary'
+      span.glyphicon.glyphicon-pencil
+      |  Edit
+    h1
+      = model.subject
 
   p
-    ' User Name:
+    label User Name:
     model.userName
 
   p
     label Status:
     '
-    = view 'select' content=STATUSES value=model.status
+    = view 'select' content=STATUSES value=model.status class="form-control"
 
   p
     label Feedback:
     br
-    = textarea value=model.notes
+    = textarea value=model.notes class="form-control"
 
-  p
-    a.delete href='#' click="delete" delete
-    input type='submit' value='Save Changes' click='saveChanges'
+  .form-actions
+    input type='submit' value='Save Changes' click='saveChanges' class="btn btn-primary"
+    a.btn.btn-danger.delete href='#' click="delete" Delete
+
     if showUnsavedMessage
       .unsaved unsaved changes
     if isSaving

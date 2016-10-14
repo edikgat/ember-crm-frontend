@@ -11,9 +11,9 @@ nav.navbar.navbar-inverse.navbar-fixed-top
         li
           if session.isAuthenticated
             if session.isUserSession
-              a click="invalidateSession" Log out User
+              a href='#' click="invalidateSession" Log Out User
             else
-              a click="invalidateSession" Log out Agent
+              a href='#' click="invalidateSession" Log Out Agent
 .container#main-container
 
   = outlet

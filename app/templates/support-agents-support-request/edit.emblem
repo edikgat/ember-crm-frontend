@@ -1,6 +1,7 @@
-article#support_request
-  h1
-    model.subject
+.col-sm-8
+  .page-header
+    h1
+      model.subject
 
   form.form-horizontal
     .form-group.required
@@ -10,7 +11,6 @@ article#support_request
       .col-sm-9
         = input value=model.subject class="required form-control"
 
-    .form-group
-      .col-sm-offset-2
-        input.btn.btn-primary type='submit' value='Save Changes' click="saveChanges"
-        a.btn.btn-default href="#" click="cancel" Cancel
+    .form-actions
+      input.btn.btn-primary type='submit' value='Save Changes' click="createSupportRequest"
+      a.cancel.btn.btn-default href="#" click="cancel" Cancel

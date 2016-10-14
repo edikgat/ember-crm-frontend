@@ -1,5 +1,6 @@
-article#support_request
-  h1 New Support Request
+.col-sm-8
+  .page-header
+    h1 New Support Request
 
   if showError
     .alert.alert-danger.alert-dismissable role="alert"
@@ -16,6 +17,5 @@ article#support_request
       .col-sm-9
         = input value=fields.subject class="required form-control"
 
-    .form-group
-      .col-sm-offset-2
-        input.btn.btn-primary type='submit' value='Create Support Request' click="createSupportRequest"
+    .form-actions
+      input.btn.btn-primary type='submit' value='Create Support Request' click="createSupportRequest"
