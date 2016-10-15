@@ -13,7 +13,7 @@ form.form-horizontal submit="signUp" role="form"
       |  First name
     .col-sm-9
       = input value=user.firstName placeholder="Enter First Name" class="required form-control"
-      each error in user.errors.firstName
+      each user.errors.firstName as |error|
         span.help-block {{error.message}}
 
   .form-group.required class={ user.errors.lastName:has-error }
@@ -22,7 +22,7 @@ form.form-horizontal submit="signUp" role="form"
       |  Last name
     .col-sm-9
       = input value=user.lastName placeholder="Enter Last name" class="required form-control"
-      each error in user.errors.lastName
+      each user.errors.lastName as |error|
         span.help-block {{error.message}}
 
   .form-group.required class={ user.errors.email:has-error }
@@ -31,7 +31,7 @@ form.form-horizontal submit="signUp" role="form"
       |  Email
     .col-sm-9
       = input value=user.email placeholder="Enter Email" class="required form-control"
-      each error in user.errors.email
+      each user.errors.email as |error|
         span.help-block {{error.message}}
 
   .form-group.required class={ user.errors.password:has-error }
@@ -40,7 +40,7 @@ form.form-horizontal submit="signUp" role="form"
       |  Password
     .col-sm-9
       = input value=user.password placeholder="Enter Password" class="required form-control"
-      each error in user.errors.password
+      each user.errors.password as |error|
         span.help-block {{error.message}}
 
 
@@ -50,7 +50,7 @@ form.form-horizontal submit="signUp" role="form"
       |  Password Confirmation
     .col-sm-9
       = input value=user.passwordConfirmation placeholder="Enter password again" class="required form-control"
-      each error in user.errors.passwordConfirmation
+      each user.errors.passwordConfirmation as |error|
         span.help-block {{error.message}}
   .form-group
     .col-sm-offset-1.col-sm-10
