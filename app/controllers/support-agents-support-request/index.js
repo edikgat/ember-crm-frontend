@@ -15,7 +15,7 @@ export default Ember.ObjectController.extend({
     delete: function() {
       var self = this;
       this.get('model').destroyRecord().then(function() {
-        self.transitionToRoute('support-agents-support-request');
+        self.transitionToRoute('support-agents-support-requests');
       });
     },
 
