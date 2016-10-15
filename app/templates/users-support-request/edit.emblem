@@ -4,13 +4,16 @@
       model.subject
 
   form.form-horizontal
-    .form-group.required
+
+    .form-group.required class={ model.errors.subject:has-error }
       label.required.col-sm-3.control-label for="subject"
         abbr title="required" *
         |  Subject
       .col-sm-9
-        = input value=model.subject class="required form-control"
+        = input value=model.subject placeholder="Enter Last name" class="required form-control"
+        each model.errors.subject as |error|
+          span.help-block {{error.message}}
 
     .form-actions
-      input.btn.btn-primary type='submit' value='Save Changes' click="createSupportRequest"
+      input.btn.btn-primary type='submit' value='Save Changes' click="saveChanges"
       a.cancel.btn.btn-default href="#" click="cancel" Cancel

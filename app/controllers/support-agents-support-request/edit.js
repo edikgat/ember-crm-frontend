@@ -5,9 +5,13 @@ export default Ember.ObjectController.extend({
 
     saveChanges: function() {
       var self = this;
+      const flashMessages = Ember.get(this, 'flashMessages');
       this.get('model').save().then(function() {
+        flashMessages.success('Support request successully updated');
         self.transitionToRoute('support-agents-support-request');
-      });
+      }).catch(() => {
+        flashMessages.danger('Support request has errors');
+     });
     },
 
     cancel: function() {

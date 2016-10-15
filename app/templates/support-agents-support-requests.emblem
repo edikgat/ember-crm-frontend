@@ -3,7 +3,7 @@
     | Requests
   .form-search.form-flex
     .form-group
-      = input value=search placeholder="search" classNames="search form-control search-input" type="search"
+      = input value=search placeholder="Search by subject" classNames="search form-control search-input" type="search"
   .list-group
     each support_request in supportRequests
       link-to 'support-agents-support-request' support_request tagName="button" class="list-group-item"

@@ -7,26 +7,35 @@ outlet
       |  Edit
     h1
       = model.subject
+  .form-horizontal
 
-  p
-    label User Name:
-    model.userName
+    .form-group class={ model.errors.status:has-error }
+      label.col-sm-3.control-label for="status"
+        |  User Name:
+      .col-sm-9
+        model.userName
 
-  p
-    label Status:
-    '
-    = view 'select' content=STATUSES value=model.status class="form-control"
+    .form-group class={ model.errors.status:has-error }
+      label.col-sm-3.control-label for="status"
+        |  Status:
+      .col-sm-9
+        = view 'select' content=STATUSES value=model.status class="form-control"
+        each model.errors.status as |error|
+          span.help-block {{error.message}}
 
-  p
-    label Feedback:
-    br
-    = textarea value=model.notes class="form-control"
+    .form-group class={ model.errors.notes:has-error }
+      label.col-sm-3.control-label for="email"
+        |  Feedback:
+      .col-sm-9
+        = textarea value=model.notes placeholder="Enter feedback" class="form-control"
+        each model.errors.notes as |error|
+          span.help-block {{error.message}}
 
-  .form-actions
-    input type='submit' value='Save Changes' click='saveChanges' class="btn btn-primary"
-    a.btn.btn-danger.delete href='#' click="delete" Delete
+    .form-actions
+      input type='submit' value='Save Changes' click='saveChanges' class="btn btn-primary"
+      a.btn.btn-danger.delete href='#' click="delete" Delete
 
-    if showUnsavedMessage
-      .unsaved unsaved changes
-    if isSaving
-      .saving saving...
+      if showUnsavedMessage
+        .unsaved unsaved changes
+      if isSaving
+        .saving saving...

@@ -14,15 +14,11 @@ export default Ember.ObjectController.extend({
 
     delete: function() {
       var self = this;
+      const flashMessages = Ember.get(this, 'flashMessages');
       this.get('model').destroyRecord().then(function() {
+        flashMessages.success('Support request successully deleted');
         self.transitionToRoute('users-support-requests');
       });
-    },
-
-    saveChanges: function() {
-      if (this.get('model.isDirty')) {
-        this.get('model').save();
-      }
     }
   }
 });
