@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+  routeAfterAction: 'users-support-request',
   actions: {
 
     saveChanges: function() {
@@ -8,7 +9,7 @@ export default Ember.ObjectController.extend({
       const flashMessages = Ember.get(this, 'flashMessages');
       this.get('model').save().then(function() {
         flashMessages.success('Support request successully updated');
-        self.transitionToRoute('users-support-request');
+        self.transitionToRoute(self.routeAfterAction);
       }).catch(() => {
         flashMessages.danger('Support request has errors');
      });
@@ -16,7 +17,7 @@ export default Ember.ObjectController.extend({
 
     cancel: function() {
       this.get('model').rollback();
-      this.transitionToRoute('users-support-request');
+      this.transitionToRoute(this.routeAfterAction);
     }
 
   }
