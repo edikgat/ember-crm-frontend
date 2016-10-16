@@ -1,15 +1,22 @@
 .col-sm-3
-  link-to 'users-support-requests.new' class="btn btn-primary"
-    span.glyphicon.glyphicon-plus
-    |  New request
+  if session.isUserSession
+    link-to 'users-support-requests.new' class="btn btn-primary"
+      span.glyphicon.glyphicon-plus
+      |  New request
 
   h2
     | Requests
   .form-search.form-flex
     .form-group
-      = input value=search placeholder="Search by subject" classNames="search form-control search-input" type="search"
+      = input value=searchSubject placeholder="Search by subject" classNames="search form-control search-input" type="search"
+    .form-group
+      = view 'select' content=STATUSES value=searchStatus class="search form-control search-input form-control" type="search"
   .list-group
     each support_request in supportRequests
-      link-to 'users-support-request' support_request tagName="button" class="list-group-item"
-        support_request.subject
+      if session.isUserSession
+        link-to 'users-support-request' support_request tagName="button" class="list-group-item"
+          support_request.subject
+      else
+        link-to 'support-agents-support-request' support_request tagName="button" class="list-group-item"
+          support_request.subject
 outlet
