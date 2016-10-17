@@ -4,7 +4,7 @@ export default DS.Model.extend({
   subject: DS.attr('string'),
   user_id: DS.attr('string'),
   status: DS.attr('string', { defaultValue: 'open' }),
-  notes: DS.attr('string'),
+  feedback: DS.attr('string'),
   userName: DS.attr('string'),
 }).reopenClass({
   STATUSES: ['open', 'closed', 'canceled'],

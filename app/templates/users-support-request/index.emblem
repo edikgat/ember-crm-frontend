@@ -16,7 +16,7 @@ outlet
   p
     label Feedback:
     br
-    model.notes
+    model.feedback
 
   p
     a.btn.btn-danger.delete href='#' click="delete" Delete

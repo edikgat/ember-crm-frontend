@@ -23,12 +23,12 @@ outlet
         each model.errors.status as |error|
           span.help-block {{error.message}}
 
-    .form-group class={ model.errors.notes:has-error }
+    .form-group class={ model.errors.feedback:has-error }
       label.col-sm-3.control-label for="email"
         |  Feedback:
       .col-sm-9
-        = textarea value=model.notes placeholder="Enter feedback" class="form-control"
-        each model.errors.notes as |error|
+        = textarea value=model.feedback placeholder="Enter feedback" class="form-control"
+        each model.errors.feedback as |error|
           span.help-block {{error.message}}
 
     .form-actions
