@@ -1,4 +1,4 @@
-.col-sm-3
+.col-sm-4
   if session.isUserSession
     link-to 'users-support-requests.new' class="btn btn-primary"
       span.glyphicon.glyphicon-plus

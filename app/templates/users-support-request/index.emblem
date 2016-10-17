@@ -1,6 +1,6 @@
 outlet
 
-.col-sm-8
+.col-sm-7
   .page-header
     link-to 'users-support-request.edit' model classNames='edit btn btn-primary'
       span.glyphicon.glyphicon-pencil
