@@ -7,7 +7,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top
         if session.isAuthenticated
           unless session.isUserSession
             li
-              a href="http://localhost:3000/api/support_agents/v1/support_requests/report.pdf" Download Report
+              = closed-support-requests-report
         li
           if session.isAuthenticated
             if session.isUserSession
