@@ -9,6 +9,7 @@ export default Ember.Controller.extend({
     invalidateSession() {
       this.get('session').invalidate();
       this.transitionToRoute('dashboard');
+      this.store.unloadAll();
     }
   }
 });

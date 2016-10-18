@@ -3,5 +3,5 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
   model: function() {
-    return this.store.findAll('support-request'); },
+    return this.store.findAll('support-request'); }
 });
