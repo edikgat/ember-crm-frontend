@@ -10,7 +10,6 @@ export default Devise.extend({
     if (!Ember.isEmpty(userToken) && !Ember.isEmpty(userIdentification)) {
       var auth = {};
       auth[tokenAttributeName] = userToken;
-      auth[identificationAttributeName] = userIdentification;
       auth[this.resourceAttributeName] = this.resourceName;
       const authData = JSON.stringify(auth);
       block('Authorization', `${authData}`);
